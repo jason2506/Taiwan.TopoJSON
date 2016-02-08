@@ -17,7 +17,9 @@
 
 `topojson/` 目錄下已有預建置好的基本圖資（資料僅有行政區／村里代碼與名稱）。
 
-要重新生成 TopoJSON 檔，需要先安裝 [mapshaper](https://github.com/mbloch/mapshaper)，並執行以下命令：
+要重新生成 TopoJSON 檔，請先從下節「資料來源」下載所需的原始檔案，並解壓縮到 `raw/` 目錄中。
+
+接著，安裝 [mapshaper](https://github.com/mbloch/mapshaper)，並執行以下命令：
 
 ```
 $ make split-all topojson-all
