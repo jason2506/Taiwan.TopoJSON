@@ -1,0 +1,40 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: auto;
+  padding: 4px;
+  background: rgba(0, 0, 0, .8);
+  color: white;
+  font: 12px sans-serif;
+  pointer-events: none;
+}
+
+.tooltip.s-show {
+  display: block;
+}
+
+svg {
+  margin: 0;
+  background: #a4bac7;
+}
+
+path {
+  fill: #d7c7ad;
+  stroke: #a5967e;
+  pointer-events: all;
+}
+
+path:hover {
+  fill: #a5967e;
+}
+
+text {
+  pointer-events: none;
+}
