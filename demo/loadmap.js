@@ -14,7 +14,7 @@
         .attr('height', height);
 
     load = function(type, id) {
-        var filepath = 'http://raw.githubusercontent.com/' +
+        var filepath = 'https://raw.githubusercontent.com/' +
             'jason2506/Taiwan.TopoJSON/master/topojson/' +
             (type === 'towns' ? 'towns/towns-' + id :
                 (type === 'villages' ? 'villages/villages-' + id :
