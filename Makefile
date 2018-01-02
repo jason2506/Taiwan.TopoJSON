@@ -5,9 +5,9 @@ CSV_DIR = csv
 SPLIT_DIR = split
 TOPOJSON_DIR = topojson
 
-COUNTIES_SHP = $(RAW_DIR)/County_MOI_1041215.shp
-TOWNS_SHP = $(RAW_DIR)/Town_MOI_1041215.shp
-VILLAGES_SHP = $(RAW_DIR)/Village_NLSC_1041215.shp
+COUNTIES_SHP = $(RAW_DIR)/COUNTY_MOI_1060525.shp
+TOWNS_SHP = $(RAW_DIR)/TOWN_MOI_1061130.shp
+VILLAGES_SHP = $(RAW_DIR)/VILLAGE_MOI_1061130.shp
 
 COUNTIES_CSV = $(CSV_DIR)/counties.csv
 TOWNS_CSV = $(CSV_DIR)/towns.csv
@@ -25,18 +25,21 @@ TOPOJSON_VILLAGES_FILES = $(patsubst $(SPLIT_VILLAGES_PATH)/%.shp, $(TOPOJSON_VI
 
 
 SPLIT_COUNTIES_OPTS = \
-		-rename-fields id=County_ID \
+		-rename-fields id=COUNTYCODE \
 		-join $(COUNTIES_CSV) keys=id,id field-types=id:str \
+	  -verbose \
 		-filter-fields id,name
 SPLIT_TOWNS_OPTS = \
-		-rename-fields id=Town_ID \
+		-rename-fields id=TOWNCODE \
 		-join $(TOWNS_CSV) keys=id,id field-types=id:str \
-		-split County_ID \
+		-split COUNTYCODE \
+	  -verbose \
 		-filter-fields id,name
 SPLIT_VILLAGES_OPTS = \
-		-rename-fields id=VILLAGE_ID \
+		-rename-fields id=VILLCODE \
 		-join $(VILLAGES_CSV) keys=id,id field-types=id:str \
-		-split TOWN_ID \
+		-split TOWNCODE \
+	  -verbose \
 		-filter-fields id,name
 
 
