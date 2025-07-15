@@ -1,13 +1,13 @@
-MAPSHAPER = ./node_modules/.bin/mapshaper
+MAPSHAPER = npx mapshaper
 
 RAW_DIR = raw
 CSV_DIR = csv
 SPLIT_DIR = split
 TOPOJSON_DIR = topojson
 
-COUNTIES_SHP = $(RAW_DIR)/COUNTY_MOI_1060525.shp
-TOWNS_SHP = $(RAW_DIR)/TOWN_MOI_1061130.shp
-VILLAGES_SHP = $(RAW_DIR)/VILLAGE_MOI_1061130.shp
+COUNTIES_SHP = $(RAW_DIR)/counties.shp
+TOWNS_SHP = $(RAW_DIR)/towns.shp
+VILLAGES_SHP = $(RAW_DIR)/villages.shp
 
 COUNTIES_CSV = $(CSV_DIR)/counties.csv
 TOWNS_CSV = $(CSV_DIR)/towns.csv

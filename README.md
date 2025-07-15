@@ -19,7 +19,12 @@
 
 要重新生成 TopoJSON 檔，請先從下節「資料來源」下載所需的原始檔案，並解壓縮到 `raw/` 目錄中。
 
-接著，安裝 [mapshaper](https://github.com/mbloch/mapshaper)，並執行以下命令：
+**重要：** 為了讓建置流程順利運作，請將解壓縮後的 `Shapefile`（包含 `.shp`, `.shx`, `.dbf` 等副檔名）依照以下規則重新命名：
+*   直轄市、縣市界線圖資 -> `counties` (例如 `COUNTY_MOI_1060525.shp` -> `counties.shp`)
+*   鄉鎮市區界線圖資 -> `towns` (例如 `TOWN_MOI_1061130.shp` -> `towns.shp`)
+*   村里界圖圖資 -> `villages` (例如 `VILLAGE_NLSC_1140620.shp` -> `villages.shp`)
+
+接著，安裝 [mapshaper](https://github.com/mbloch/mapshaper)（若尚未安裝），並執行以下命令：
 
 ```
 $ make split-all topojson-all
@@ -39,6 +44,12 @@ $ make split-towns topojson-towns
 $ make villages/villages-6300500.json
 ```
 
+## 踩坑紀錄
+1. 如果遇到`make: Nothing to be done for ...`:
+
+  執行 `make clean-..`. 命令，例如`clean-topojson-villages`
+
+ `make`透過判斷「目標檔案」是否已經存在，以及它的「依賴檔案」是否比它更新，來決定是否需要執行某個命令。
 
 ## 資料來源
 
